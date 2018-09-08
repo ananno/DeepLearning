@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 class Network():
 	def __init__(self):
@@ -26,6 +27,7 @@ class Network():
 	# Training
 	def train(self, training_set_inputs, training_set_outputs, no_of_training=10000):
 		print("\n\t[+] Training is in progress...")
+		training_started = time.time()
 		# training loop
 		for iteration in range(no_of_training):
 			# Output matrix
@@ -42,7 +44,7 @@ class Network():
 
 		# print out relevant info.
 		print("\n\t[+] Training has been completed.")
-		print("\n\t[+] After training", no_of_training, 'times')
+		print("\n\t[+] After training", no_of_training, 'times in', str(round(time.time()-training_started, 2))+'s.')
 		print ("\n\t[+] New weights:", ' '.join( str(round(i[0], 6)) for i in self.synaptic_weights ))
 
 
