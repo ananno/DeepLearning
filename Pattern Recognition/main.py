@@ -4,7 +4,7 @@ from MyFirstNN import data
 
 if __name__ == "__main__":
 	
-	#Intialization of the neural network.
+	# intialization of the neural network.
 	nn = Network()
 
 	# train network
