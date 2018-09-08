@@ -54,12 +54,12 @@ class Network():
 		return self.sigmoid_the_normalizer(dot_product)
 
 	def accuracy(self, network_output, expected_output):
-		correct = []
+		correct = 0
 		for i, j in zip(network_output, expected_output):
 			if round(i[0], 2) == j[0]:
-				correct.append(j[0])
+				correct += 1
 
-		result  = (len(correct) / float(len(network_output))) * 100
+		result  = (correct / float(len(network_output))) * 100
 		return round( result, 2)
 
 	def test(self, test_inputs, test_outputs):
