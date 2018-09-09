@@ -14,7 +14,7 @@ training_set_outputs = np.array([
 
 # test data
 test_set_inputs  = np.array([
-	[1, 0, 1],
+	[1, 0, 0],
 	[1, 1, 0],
 	[0, 0, 0]
 ])
