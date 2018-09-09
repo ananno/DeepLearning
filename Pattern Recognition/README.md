@@ -39,6 +39,27 @@
 ![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/sigmoid_function.png)
 
 
+# Test this project
+
+`Install numpy if you don't have it installed with the following command`
+```bash
+pip install numpy
+```
+* copy the folder MyFirstNN and pattern_recognition.py
+* open pattern_recognition.py and change the `no_of_training`'s value
+* run the pattern_recognition.py file
+
+```bash
+.\pattern_recognition.py
+```
+***or***
+```bash
+python pattern_recognition.py
+```
+
+
+
+
 
 ***After training the network 10000 times***
 
