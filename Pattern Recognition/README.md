@@ -18,28 +18,33 @@
 
 ![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/schemetic_network.png)
 
-### Sigmoid function
-
-![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/sigmoid_function.png)
-
 
 ## Working principles
 
 * Set some random weights
-* Calculate output: ***Σ*** ***W*** *i* ***X**** *i*
+* Calculate output: ***Σ*** ***W*** *i* ***X*** *i*
 * Normalize the output with ***Sigmoid function*** to be between 0 to 1
 * Calculate error i.e. `difference between expected output and neural network's output`
-* Calculate the Error Weighted Derivative i.e. cost of the training = error . input . sigmoidCurveGradientOfNetworkOutput(network_output)
-* sigmoidCurveGradientOfNetworkOutput = network_output * (1-network_output)
-* Then adjust the weights with the cost i.e. backpropagation
+* Calculate the Error Weighted Derivative i.e. cost of the training
+  `cost = error.input.sigmoidCurveGradientOfNetworkOutput(network_output)`
+  where `sigmoidCurveGradientOfNetworkOutput = network_output * (1-network_output)`
+* Then adjust the weights with the cost
+  `new_weights = weights + cost`
 > This is a single training case. This training is iterated many times to adjust the inital weights.
-* Test the network with some different data to test accuracy
+* Test the network with some new data
+
+
+### Sigmoid function
+
+![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/sigmoid_function.png)
 
 
 
 ***After training the network 10000 times***
 
 ![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/training-1.png)
+
+
 
 
 
