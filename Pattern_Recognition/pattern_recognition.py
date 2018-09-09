@@ -12,4 +12,3 @@ if __name__ == "__main__":
 
 	# test the neural network against some new data
 	nn.test(data.test_set_inputs, data.test_set_outputs)
-	
