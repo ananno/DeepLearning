@@ -1,5 +1,4 @@
 import numpy as np
-import random
 import time
 
 class Dataset:
@@ -28,7 +27,7 @@ class Dataset:
     def generate(self):
 
         # generate inputs
-        np.random.seed(int(time.time()))
+
         data = np.array(np.random.random((self.total_data, self.input_size)) >= 0.5, dtype=np.int32)
 
         # copy data to input_data
@@ -45,7 +44,7 @@ class Dataset:
 
     def shuffle_data(self, data_pair):
         combind_data = list(zip(*data_pair))
-        random.shuffle(combind_data)
+        np.random.shuffle(combind_data)
         return list(zip(*combind_data))
 
     def split_training_testing(self, raw_data):

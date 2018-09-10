@@ -12,7 +12,7 @@ class NeuronLayer:
             inputs_connected_to_each_neuron,
             number_of_neurons
         )
-        np.random.seed(int(time.time()))
+
         self.synaptic_weights = np.random.random(shape)
         self.output = None
         self.loss   = None
@@ -58,19 +58,23 @@ class Network:
             # Output matrix
             self.layer1.output, self.layer2.output = self.activation(input_data)
 
-            # error matrix
+            # error & sigmoid derivative of output layer
             self.layer2.loss = input_label - self.layer2.output
             self.layer2.grad = self.layer2.loss * self.sigmoid(self.layer2.output)
 
+            # error & sigmoid derivative of hidden layer
             self.layer1.loss = self.layer2.grad.dot(self.layer2.synaptic_weights.T)
             self.layer1.grad = self.layer1.loss * self.sigmoid_derivative(self.layer1.output)
 
+            # cost of training for hidden and output layer 
             self.layer1.cost = input_data.T.dot(self.layer1.grad)
             self.layer2.cost = self.layer1.output.T.dot(self.layer2.grad)
 
+            # weights adjustment
             self.layer1.synaptic_weights += self.layer1.cost
             self.layer2.synaptic_weights += self.layer2.cost
 
+            # print losses
             print("Step %s : L1_loss: %s, L2_loss: %s" % (
                 iteration,
                 round(np.average(np.sum(self.layer1.loss, axis=-1)), 8),
@@ -87,7 +91,7 @@ class Network:
         )
         return layer1_output, layer2_output
 
-    # Think
+    # Thinking of the network
     def think(self, inputs):
         result = self.sigmoid(
             np.dot(inputs, self.layer2.synaptic_weights)
@@ -95,6 +99,7 @@ class Network:
         return round(result[0][0], 2)
 
 
+    # Test
     def test(self):
         test_data = self.dataset.test_data
         true_count = 0
@@ -104,7 +109,7 @@ class Network:
                 true_count += 1
 
             print("Step: %s, Predicted: %s, Expected: %s, Accuracy: %s" % (
-                i, output, test_label[0], round(true_count/(i+1), 2)
+                i, output, test_label[0], round(true_count/(i+1), 3)
             ))
 
-        print("\n\tFINAL ACCURACY OVER ALL TEST:", true_count/self.dataset.test_data_count, "\n")
+        print("\nFINAL ACCURACY OVER ALL TEST:", true_count/self.dataset.test_data_count, "\n")

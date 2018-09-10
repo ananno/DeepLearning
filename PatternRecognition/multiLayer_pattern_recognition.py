@@ -1,5 +1,7 @@
 from MultiLayerApproach.MultiLayerNetwork import Network, NeuronLayer
 import sys
+import numpy as np
+import time
 
 if __name__ == "__main__":
 
@@ -9,6 +11,8 @@ if __name__ == "__main__":
     except:
         no_of_training = 1000
 
+    np.random.seed(int(time.time()))
+    
     # First layer - hidden layer: having 3 neurons,
     # each connected to 3 inputs
     layer1 = NeuronLayer(
