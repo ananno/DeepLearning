@@ -7,7 +7,7 @@ if __name__ == "__main__":
     try:
         no_of_training = int(sys.argv[1])
     except:
-        no_of_training = 10000
+        no_of_training = 1000
 
     # First layer - hidden layer: having 3 neurons,
     # each connected to 3 inputs
