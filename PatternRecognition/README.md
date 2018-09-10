@@ -16,7 +16,7 @@
 
 ### Here's our *single neuron neural network*'s schematic representation
 
-![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/schemetic_network.png)
+![image](https://github.com/iraihankabir/DeepLearning/blob/master/PatternRecognition/img/schemetic_network.png)
 
 
 ## Working principles
@@ -36,7 +36,7 @@
 
 ### Sigmoid function
 
-![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/sigmoid_function.png)
+![image](https://github.com/iraihankabir/DeepLearning/blob/master/PatternRecognition/img/sigmoid_function.png)
 
 
 # Test this project
@@ -63,7 +63,7 @@ python pattern_recognition.py
 
 ***After training the network 10000 times***
 
-![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/training-1.png)
+![image](https://github.com/iraihankabir/DeepLearning/blob/master/PatternRecognition/img/training-1.png)
 
 
 
@@ -71,4 +71,4 @@ python pattern_recognition.py
 
 ***After training the network 100000 times***
 
-![image](https://github.com/iraihankabir/DeepLearning/blob/master/Pattern%20Recognition/img/training-2.png)
+![image](https://github.com/iraihankabir/DeepLearning/blob/master/PatternRecognition/img/training-2.png)
