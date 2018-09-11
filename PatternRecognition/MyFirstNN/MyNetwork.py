@@ -42,7 +42,8 @@ class Network:
 
             # update weights
             self.synaptic_weights += cost
-
+            # average loss
+            print("\t[+] Step %s : Loss: %s" % (iteration, np.average(np.sum(error, axis=-1))))
         # print out relevant info.
         print("\n\t[+] Training has been completed.")
         print("\n\t[+] After training", no_of_training, 'times in',

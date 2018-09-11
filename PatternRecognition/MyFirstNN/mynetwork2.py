@@ -40,7 +40,7 @@ class Network:
             input_data, input_label = self.dataset.get_next()
             input_data = np.array(input_data)
             input_label = np.array(input_label)
-
+            print('input ', ', '.join(str(i) for i in input_data))
             # Output matrix
             output = self.activation(input_data)
 
@@ -95,3 +95,5 @@ class Network:
             print("Accuracy: ", true_count/(i+1))
 
         print("\nFinal Accuracy: ", true_count/self.dataset.test_data_count)
+
+
